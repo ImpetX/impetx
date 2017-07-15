@@ -1,1 +1,73 @@
-/*  */
+/* base  */
+
+html {
+    min-height: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 0.625rem;
+    -webkit-tap-highlight-color: transparent;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.6rem;
+    color: #3f403b;
+    background-color: #fff;
+}
+
+/* layout  */
+.wrapper {
+    overflow-x: hidden;
+}
+
+/* navbar  */
+.nav-content {
+    padding: 15px 0;
+    line-height: 0;
+    border-bottom: 1px solid #7d297e;
+    text-align: center;
+}
+
+.logo {
+    width: 12rem;
+}
+
+/* hero */
+.hero {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    background-image: url('assets/images/hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.hero::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0 , 0, 0.5);
+    content: '';
+}
+
+.hero-heading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 3;
+    transform: translate(-50%, -50%);
+    font-weight: 700;
+    font-style: normal;
+    font-size: 3rem;
+    color: #fbfbfb;
+    letter-spacing: 0.3px;
+}
