@@ -40,7 +40,8 @@ body {
 /* hero */
 .hero {
     position: relative;
-    height: calc(100vh - 73px);
+    height: 450px;
+    margin-bottom: 3rem;
     overflow: hidden;
     background-image: url('assets/images/hero.jpg');
     background-repeat: no-repeat;
@@ -48,7 +49,8 @@ body {
     background-position: center center;
 }
 
-.hero::after {
+.hero::after,
+.card-image::after {
     position: absolute;
     top: 0;
     left: 0;
@@ -59,7 +61,8 @@ body {
     content: '';
 }
 
-.hero-heading {
+.hero-heading,
+.card-text {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -68,8 +71,131 @@ body {
     width: 100%;
     font-weight: 700;
     font-style: normal;
-    font-size: 3rem;
     color: #fbfbfb;
     text-align: center;
     letter-spacing: 0.3px;
+}
+
+.hero-heading {
+    font-size: 3rem;
+}
+
+/* works  */
+.works {
+    margin-bottom: 30px;
+    padding: 0 15px;
+}
+
+.works-heading {
+    margin: 0 0 1.5rem;
+    font-size: 2.8rem;
+    color: #7d297e;
+    text-align: center;
+}
+
+/* card */
+.card-wrapper {
+    overflow: hidden;
+}
+
+.card {
+    height: 250px;
+    margin-right: 10px;
+    overflow: hidden;
+    float: left;
+    background-color: #fff;
+    transition: box-shadow 0.3s linear;
+}
+
+.card:hover {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.card-image {
+    position: relative;
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-image > img {
+    height: 100%;
+    width: 100%;
+}
+
+.card-text {
+    font-size: 2.2rem;
+}
+
+/* footer */
+footer {
+    border-top: 2px solid #7d297e;
+}
+
+.footer {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer > p {
+    margin: 0;
+    font-style: normal;
+    font-size: 14px;
+    color: #7d297e;
+}
+
+@media only screen and (min-width: 950px) {
+    .card {
+        width: calc(33.3% - 7px);
+    }
+
+    .card:nth-of-type(2n+1) {
+        clear: none;
+    }
+
+    .card:nth-of-type(3n+3) {
+       margin-right: 0;
+   }
+
+    .card:nth-of-type(3n+1) {
+        clear: left;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 949px) {
+    .card {
+        width: calc(50% - 7px);
+    }
+
+    .card:nth-child(3) {
+        margin-top: 15px;
+    }
+
+    .card:nth-of-type(n+1) {
+        clear: none;
+    }
+
+    .card:nth-of-type(2n+1) {
+        clear: left;
+    }
+
+    .card:nth-of-type(2n+2) {
+       margin-right: 0;
+   }
+}
+
+@media only screen and (max-width: 599px) {
+    .hero-heading,
+    .works-heading {
+        font-size: 2.6rem;
+    }
+    .card {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .card:last-child {
+        margin-bottom: 0;
+    }
 }
